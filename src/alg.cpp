@@ -1,6 +1,7 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
+#include "cmath"
 
 
 bool checkPrime(uint64_t value) {
@@ -10,9 +11,9 @@ bool checkPrime(uint64_t value) {
                 return false;
         return true;
     }
-    else
-        return false;
+    return false;
 }
+
 
 uint64_t nPrime(uint64_t n) {
     if (n == 1)
@@ -21,7 +22,7 @@ uint64_t nPrime(uint64_t n) {
     uint64_t num = 3;
     while (count < n) {
         bool is_prime = true;
-        for (uint64_t i = 2; i <= std::sqrt(num); ++i) {
+        for (uint64_t i = 2; i <= (sqrt(num)); ++i) {
             if (num % i == 0) {
                 is_prime = false;
                 break;
@@ -44,7 +45,7 @@ uint64_t nextPrime(uint64_t value) {
         num++;
     while (true) {
         bool is_prime = true;
-        for (uint64_t i = 2; i <= std::sqrt(num); ++i) {
+        for (uint64_t i = 2; i <= sqrt(num); ++i) {
             if (num % i == 0) {
                 is_prime = false;
                 break;
